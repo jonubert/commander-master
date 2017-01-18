@@ -16,12 +16,42 @@
 
 <body>
   <div id="h4Header">
-  <h4>Royal Ranger Winter Camp 2017</h4>
+      <h4>Royal Ranger Winter Camp 2017</h4>
   </div>
-<!--Below is the placeholder for where the views will get inserted -->
-<div ng-controller="LoadAllQuestionsController">
-<div ng-include="'partials/view_load_all_questions.html'">
-</div>
+  <div ng-controller="LoadAllQuestionsController">
+      <h2>QUESTION VIEW</h2>
+      <div class="question_container">
+        Response : {{theResponse}}
+        <br />
+        _ID: {{id}}<br />
+        Question Number: <input type="text" ng-model="QN" /><br />
+        <p class="formfield">
+        Question <br />
+        <textarea rows="3" cols="40" ng-model="QT"></textarea><br />
+        </p>
+        Question Answer #1: <input type="text" ng-model="A1" /><br />
+        Question Answer #2: <input type="text" ng-model="A2" /><br />
+        Question Answer #3: <input type="text" ng-model="A3" /><br />
+        Question Answer #4: <input type="text" ng-model="A4" /><br />
+        Correct Answer: <input type="text" ng-model="CA" /><br />
+        Time Stamp :  {{TS}}
+        <br />
+        <button ng-click="pushQuestion()">PUSH QUESTION</button>
+        <button ng-click="revealAnswer()">REVEAL</button>
+        <button ng-click="clearQuestion()">CLEAR</button>
+        <br />
+        <button ng-click="getPrevious()">PREV</button>
+        <button class="loadem" ng-click="update()">UPDATE</button>
+        <button class="loadem" ng-click="getNext()">NEXT</button>
+        <br />
+        <button ng-click="loadPlayers()">LOAD PLAYERS</button>
+        <br />
+      </div>
+      <div class="player_container">
+        <ul>
+            <li ng-repeat="player in players">{{player.NickName}}</li>
+        </ul>
+      </div>
 </div>
 
 <!-- Modules -->

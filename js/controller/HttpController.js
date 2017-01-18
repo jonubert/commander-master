@@ -210,15 +210,13 @@ $scope.clearQuestion = function(){
   $scope.getQuestionNumber=function(){
     $scope.id=response.data[qNumber]._ID;
     $scope.QN=response.data[qNumber].QuestionNumber;
-    $scope.QT=response.data[qNumber].QuestionText +"asd="+ qNumber;
+    $scope.QT=response.data[qNumber].QuestionText;
     $scope.A1=response.data[qNumber].Answer1;
     $scope.A2=response.data[qNumber].Answer2;
     $scope.A3=response.data[qNumber].Answer3;
     $scope.A4=response.data[qNumber].Answer4;
     $scope.CA=response.data[qNumber].CorrectAnswer;
     $scope.TS=response.data[qNumber].TimeStamp;
-    console.log(response.data[qNumber].QuestionText );
-    console.log($scope.QT);
   }
 
   /* FunctionL loadPlayers:
